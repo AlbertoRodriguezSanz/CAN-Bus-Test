@@ -30,7 +30,12 @@ For this test the PICkit4 in-circuit debugger/programmer will be used to load th
 - PGC
 - VDD
 - VSS
-    
+![pickit4 connections](https://github.com/AlbertoRodriguezSanz/CAN-Bus-Test/assets/95371514/aca34265-d625-4ffe-b99b-b4cd80b32269)
+
+On the protoboard the MCLR pin needs to include two resistors of 10kΩ (R1) and 470Ω (R2) máx.
+![mclr connection](https://github.com/AlbertoRodriguezSanz/CAN-Bus-Test/assets/95371514/b95aa3bf-8a20-4b94-be2d-364be542fe47)
+
+  
 ## Requirements
 
 Install MPLAB X IDE tool for Windows, Linux or MAC from the following link ([download link](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide#tabs)).
