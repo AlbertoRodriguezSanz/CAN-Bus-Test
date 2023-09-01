@@ -46,8 +46,12 @@ Once MPLAB is opened, load the project through *File > Open Project* and then se
 This will open the work environment, where `main.c` is the code file that will be compiled into the PIC. The project properties are accessed through *Production > Set Project Configuration > Customize...*, where the PICkit4 needs to be selected in the *Connected Hardware Tool* menu.
 ![Screenshot from 2023-09-01 14-19-52](https://github.com/AlbertoRodriguezSanz/CAN-Bus-Test/assets/95371514/248a38f8-ebf5-4f62-97c1-47c6fd496216)
 
-
-Make sure that MPLAB is already connected to the PIC. External power needs to be supplied to the programmer. It is recommended to disconnect the CAN wire that is connected to the driver to avoid deriving electric current into it.
+Modify the following options from the default parameters for the PICkit4 programmer from the Option categories dropdown menu.
+-Power
+  - Power target circuit from PICkit4.
+  - Voltage Level: 5V.
+- PICkit4 Tool Options
+  - Program Speed: Low (Otherwise an error will pop up when trying to load the firmware).
 
 First, modify the `canId` variable corresponding to the ID of that encoder. The correspondence is detailed in [this diagram](https://robots.uc3m.es/teo-developer-manual/diagrams.html#joint-indexes). A value of 100 must be added to the ID of the iPOS node. Example: for the elbow of the left arm joint ID 24, use `canId = 124`.
 
