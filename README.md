@@ -6,11 +6,12 @@ Within this firmware there are two available tests:
 - The goal of the second test was to create an application loop in which each time a microcontroller receives a message, it blinks the LED for 1s and sends a message that the other node receives.
 
 ## Setup
-![alt text](https://github.com/[AlbertoRodriguezSanz]/[can-bus-test]/blob/[main]/image.jpg?raw=true)
+
+![broadboard_can_bus_top_viewjpg](https://github.com/AlbertoRodriguezSanz/CAN-Bus-Test/assets/95371514/c0f4a20e-199d-4b0a-b0b2-8a69f7578277)
 
 ## Requirements
 
-Install MPLAB tool v.8.92 for Windows ([download link](https://drive.google.com/open?id=1n51XC7JwGAtncWq1itDxE7FpyqdSyaWD)).
+Install MPLAB X IDE tool for Windows ([download link](https://drive.google.com/open?id=1n51XC7JwGAtncWq1itDxE7FpyqdSyaWD)).
 If working on Ubuntu or another OS, download VirtualBox and use the virtual machine uploaded [here](https://drive.google.com/open?id=0BxR76I90oKSmQ0xsS0loZVhhRnM) (includes MPLAB IDE v.8.92 and EasySetup on Windows 7).
 
 ## How to download the firmware to the PIC
