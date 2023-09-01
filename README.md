@@ -11,7 +11,7 @@ Within this firmware there are two available tests:
 
 ## Requirements
 
-Install MPLAB X IDE tool for Windows ([download link](https://drive.google.com/open?id=1n51XC7JwGAtncWq1itDxE7FpyqdSyaWD)).
+Install MPLAB X IDE tool for Windows ([download link]([https://drive.google.com/open?id=1n51XC7JwGAtncWq1itDxE7FpyqdSyaWD](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide#tabs))).
 If working on Ubuntu or another OS, download VirtualBox and use the virtual machine uploaded [here](https://drive.google.com/open?id=0BxR76I90oKSmQ0xsS0loZVhhRnM) (includes MPLAB IDE v.8.92 and EasySetup on Windows 7).
 
 ## How to download the firmware to the PIC
