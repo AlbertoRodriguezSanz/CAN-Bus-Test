@@ -22,7 +22,11 @@ The following parameters are configured with the Microchip Code Configurator plu
   - Phase Segment 2: 2xTQ
   - Propagation Segment: 1xTQ
 - Transmit-Receive Settings
-  - Operation Mode: Mode 0 (Legacy)  
+  - Operation Mode: Mode 0 (Legacy)
+ 
+For this test the PICkit4 in-circuit debugger/programmer will be used to load the firmware into the microcontroller. This needs to be connected to the microcontroller with the following pins.
+- MCLR
+- 
     
 ## Requirements
 
@@ -30,8 +34,8 @@ Install MPLAB X IDE tool for Windows, Linux or MAC from the following link ([dow
 
 ## How to download the firmware to the PIC
 
-Once MPLAB is opened, load the project through *Project > Open* and then select the file `pic_source.mcp`.
-This will open the work environment, where `main.c` is the code file that will be compiled into the PIC.
+Once MPLAB is opened, load the project through *File > Open Project* and then select the file `CAN_bus_x.mc3`, where X denotates the firmware for each of the microcontrollers.
+This will open the work environment, where `main.c` is the code file that will be compiled into the PIC. 
 Make sure that MPLAB is already connected to the PIC. External power needs to be supplied to the programmer. It is recommended to disconnect the CAN wire that is connected to the driver to avoid deriving electric current into it.
 
 First, modify the `canId` variable corresponding to the ID of that encoder. The correspondence is detailed in [this diagram](https://robots.uc3m.es/teo-developer-manual/diagrams.html#joint-indexes). A value of 100 must be added to the ID of the iPOS node. Example: for the elbow of the left arm joint ID 24, use `canId = 124`.
