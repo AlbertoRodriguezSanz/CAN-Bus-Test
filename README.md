@@ -10,8 +10,20 @@ A breadboard with two PIC18F26K83 microcontrollers connected through two MCP2561
 ![broadboard_can_bus_top_viewjpg](https://github.com/AlbertoRodriguezSanz/CAN-Bus-Test/assets/95371514/c0f4a20e-199d-4b0a-b0b2-8a69f7578277)
 
 The following parameters are configured with the Microchip Code Configurator plugin (MCC):
-
-
+- Clock Settings
+  - Clock Source: Use system clock as CAN system clock
+  - Clock Frequency: 16MHz
+- Bit Rate Settings
+  - CAN bus speed: 1Mbps
+  - Time Quanta: 8
+  - Sync Jumpt Width: 1xTQ
+  - Sample Point: 75%
+  - Phase Segment 1: 4xTQ
+  - Phase Segment 2: 2xTQ
+  - Propagation Segment: 1xTQ
+- Transmit-Receive Settings
+  - Operation Mode: Mode 0 (Legacy)  
+    
 ## Requirements
 
 Install MPLAB X IDE tool for Windows, Linux or MAC from the following link ([download link](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide#tabs)).
