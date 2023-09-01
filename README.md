@@ -5,8 +5,8 @@ Within this firmware there are two available tests:
 - The goal of the first test is to verify that at least one of the microcontrollers listens the messages sent by the other.
 - The goal of the second test was to create an application loop in which each time a microcontroller receives a message, it blinks the LED for 1s and sends a message that the other node receives.
 
-#Setup
-
+## Setup
+![alt text](https://github.com/[AlbertoRodriguezSanz]/[can-bus-test]/blob/[main]/image.jpg?raw=true)
 
 ## Requirements
 
