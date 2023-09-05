@@ -53,7 +53,7 @@ Modify the following options from the default parameters for the PICkit4 program
 - PICkit4 Tool Options
   - Program Speed: Low (Otherwise an error will pop up when trying to load the firmware).
 
-First, modify the `canId` variable corresponding to the ID of that encoder. The correspondence is detailed in [this diagram](https://robots.uc3m.es/teo-developer-manual/diagrams.html#joint-indexes). A value of 100 must be added to the ID of the iPOS node. Example: for the elbow of the left arm joint ID 24, use `canId = 124`.
+//First, modify the `canId` variable corresponding to the ID of that encoder. The correspondence is detailed in [this diagram](https://robots.uc3m.es/teo-developer-manual/diagrams.html#joint-indexes). A value of 100 must be added to the ID of the iPOS node. Example: for the elbow of the left arm joint ID 24, use `canId = 124`.
 
 Then, follow the next steps:
 * Compile: `Project> Build All`
