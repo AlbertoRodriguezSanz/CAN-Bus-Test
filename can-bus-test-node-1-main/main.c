@@ -51,9 +51,9 @@ const unsigned long canId = 1;
 void main(void)
 {
     // Initialize the device
-    SYSTEM_Initialize();
+    SYSTEM_Initialize(); //The bus is configured to operate at 1mbps without any filters or masks applied.
 
-    TRISCbits.TRISC2 = 0;
+    TRISCbits.TRISC2 = 0;  //RC2 is set as an output to use the LED.
     uCAN_MSG ReceiveMsg;
     uCAN_MSG SendMsg;
     SendMsg.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
