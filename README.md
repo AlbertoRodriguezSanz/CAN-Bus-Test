@@ -12,7 +12,7 @@ For this test the PICkit4 in-circuit debugger/programmer will be used to load th
   
 ![pickit4 connections](https://github.com/AlbertoRodriguezSanz/CAN-Bus-Test/assets/95371514/aca34265-d625-4ffe-b99b-b4cd80b32269)
 
-On the protoboard the MCLR pin needs to include two resistors of 10kΩ (R1) and 470Ω (R2) (max.) 
+Unlike what is specified on the PICkit4 manual, microcontrollers need to add a second series resistor to the MCLR pin. Recommended values for the two resistrors are 10kΩ (R1) and 470Ω max.(R2).
 ![mclr connection](https://github.com/AlbertoRodriguezSanz/CAN-Bus-Test/assets/95371514/b95aa3bf-8a20-4b94-be2d-364be542fe47)
 
 The microcontrollers are connected through two MCP2561 CAN transceivers. The two "programming" connectors represent the PICKIT4 pins shown previously.
