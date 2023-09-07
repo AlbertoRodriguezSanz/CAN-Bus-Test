@@ -2,7 +2,10 @@
 PIC firmware for performing a communication test between two PIC18F26K83 microcontrollers through the CAN bus. The goal of this test is to create a loop in which each time a microcontroller receives a message, it blinks the LED for 1s and then sends a message for the other node to receive.
 
 ## Setup
- 
+A breadboard with two PIC18F26K83 microcontrollers connected through two MCP2561 CAN transceivers is used as a testbench. 
+
+![broadboard_can_bus_top_viewjpg](https://github.com/AlbertoRodriguezSanz/CAN-Bus-Test/assets/95371514/c0f4a20e-199d-4b0a-b0b2-8a69f7578277) 
+
 For this test the PICkit4 in-circuit debugger/programmer will be used to load the firmware into the microcontroller. This needs to be connected to the microcontroller with the following pins.
 - MCLR
 - PGD
@@ -20,9 +23,7 @@ The microcontrollers are connected through two MCP2561 CAN transceivers. The two
 
 ![protoboard_schematic](https://github.com/AlbertoRodriguezSanz/CAN-Bus-Test/assets/95371514/cc8b1035-44ea-4e5a-bbfc-5b08e4b7b556)
 
-A breadboard with two PIC18F26K83 microcontrollers connected through two MCP2561 CAN transceivers is used as a testbench. 
 
-![broadboard_can_bus_top_viewjpg](https://github.com/AlbertoRodriguezSanz/CAN-Bus-Test/assets/95371514/c0f4a20e-199d-4b0a-b0b2-8a69f7578277)
 
 ## ECAN module configuration
 
