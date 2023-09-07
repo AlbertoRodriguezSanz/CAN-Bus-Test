@@ -53,17 +53,9 @@ const unsigned long canId = 3;
 void main(void)
 {
     // Initialize the device
-    SYSTEM_Initialize();
+    SYSTEM_Initialize(); //The bus is configured to operate at 1mbps without any filters or masks applied.
 
-    // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
-    // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global Interrupts
-    // Use the following macros to:
-
-    // Enable the Global Interrupts
-    //INTERRUPT_GlobalInterruptEnable();
-
-    // Disable the Global Interrupts
-    //INTERRUPT_GlobalInterruptDisable();
+    TRISCbits.TRISC2 = 0;  //RC2 is set as an output to use the LED.
     uCAN_MSG ReceiveMsg;
     uCAN_MSG SendMsg;
     SendMsg.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
@@ -71,40 +63,24 @@ void main(void)
     SendMsg.frame.dlc = 1; 
     SendMsg.frame.data0 = 0x33;
     uint8_t x = 0;
-    //LATCbits.LC2 = 1;
-    //__delay_ms(100);
-    //LATCbits.LC2 = 0;
-    //CAN_transmit(&SendMsg);
     while (1)
-    {
-        // Add your application code
-        /*
-        while(!x){
-            x = CAN_transmit(&SendMsg);
-            LATCbits.LC2 = 1;
-            
-        }
-        x = 0;        
-        LATCbits.LC2 = 0;
-        __delay_ms(2000);
-        
-        */
-        
-        if(CAN_receive(&ReceiveMsg)){
-           LATCbits.LC2 = 1;
-           __delay_ms(3000);
-           LATCbits.LC2 = 0;
-           if(ReceiveMsg.frame.data0 == 0x32){
-           while(!x){
-            x = CAN_transmit(&SendMsg);
-            //LATCbits.LC2 = 1;
-            
-            }
-            x = 0;
-            }
-        }
-         
-        
+    {      
+      if(CAN_receive(&ReceiveMsg))
+      {
+         LATCbits.LC2 = 1;
+         __delay_ms(3000);
+         LATCbits.LC2 = 0;
+         //if the received message matches expected value send another message to keep the loop going
+         if(ReceiveMsg.frame.data0 == 0x32)
+         {
+           while(!x)
+           {
+            x = CAN_transmit(&SendMsg);          
+           }
+           x = 0;
+           //the message has been sent  
+         }
+      }        
     }
 }
 /**
