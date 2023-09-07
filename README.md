@@ -6,7 +6,7 @@ Within this firmware there are two available tests:
 - The goal of the second test was to create an application loop in which each time a microcontroller receives a message, it blinks the LED for 1s and sends a message that the other node receives.
 
 ## Setup
-A breadboard with two PIC18F26K83 microcontrollers connected through two MCP2561 CAN transceivers is used as a testbench.
+A breadboard with two PIC18F26K83 microcontrollers connected through two MCP2561 CAN transceivers is used as a testbench. The schematic for said breadboard is shown below, where the two "programming" connectors represent the PICKIT4 pins.
 
 ![protoboard_schematic](https://github.com/AlbertoRodriguezSanz/CAN-Bus-Test/assets/95371514/cc8b1035-44ea-4e5a-bbfc-5b08e4b7b556)
 
