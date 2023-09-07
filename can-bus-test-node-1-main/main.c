@@ -53,15 +53,6 @@ void main(void)
     // Initialize the device
     SYSTEM_Initialize();
 
-    // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
-    // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global Interrupts
-    // Use the following macros to:
-
-    // Enable the Global Interrupts
-    //INTERRUPT_GlobalInterruptEnable();
-
-    // Disable the Global Interrupts
-    //INTERRUPT_GlobalInterruptDisable();
     TRISCbits.TRISC2 = 0;
     uCAN_MSG ReceiveMsg;
     uCAN_MSG SendMsg;
@@ -70,44 +61,34 @@ void main(void)
     SendMsg.frame.dlc = 1; 
     SendMsg.frame.data0 = 0x32;
     uint8_t x,y  = 0;
+
+    //Send the first message to start the loop
     LATCbits.LC2 = 1;
-    while(!x){
-            x = CAN_transmit(&SendMsg);
-            
-            
-            }
-        x = 0;
+    while(!x)
+    {
+      x = CAN_transmit(&SendMsg);       
+    }
+    x = 0;
     LATCbits.LC2 = 0;
     while (1)
     {
-        if(CAN_receive(&ReceiveMsg)){
+        if(CAN_receive(&ReceiveMsg))
+        {
            LATCbits.LC2 = 1;
            __delay_ms(3000);
            LATCbits.LC2 = 0;
-           if(ReceiveMsg.frame.data0 == 0x33){
-           while(!y){
-            y = CAN_transmit(&SendMsg);
-            //LATCbits.LC2 = 1;
-            
-            }
+
+          //if the received message matches expected value send another message to keep the loop going
+           if(ReceiveMsg.frame.data0 == 0x33)
+           {  
+             while(!y)
+             {
+              y = CAN_transmit(&SendMsg);
+             }
             y = 0;
-            }
-        }
-                
-        //__delay_ms(1000);
-        //LATCbits.LC2 = 0;
-        //__delay_ms(2000);
-        
-        /*
-        // Add your application code
-        if(CAN_receive(&ReceiveMsg)){
-           LATCbits.LC2 = 1;
-           __delay_ms(1000);
-           LATCbits.LC2 = 0;
-        }
-        
-        */
-        
+            //the message has been sent             
+           }
+        }       
     }
 }
 /**
