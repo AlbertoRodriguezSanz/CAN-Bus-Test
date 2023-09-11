@@ -16,6 +16,19 @@ For this test the PICkit4 in-circuit debugger/programmer will be used to load th
 The microcontrollers are connected through two MCP2561 CAN transceivers. For such short distances, the use of termination resistors is not required. The two connectors represent the PICKIT4 pins required for programming each of the two microcontrollers. 
 ![protoboard_schematic](https://github.com/AlbertoRodriguezSanz/CAN-Bus-Test/assets/95371514/cc8b1035-44ea-4e5a-bbfc-5b08e4b7b556)
 
+## Device configuration
+
+- Configuration bits (CONFIG1-5H/L registers)
+  - Oscillator source at power-up: High frequency internall oscillator with no clock division applied
+  - Master Clear and Low Voltage Programming: MCLR and LVP are enabled, making the MCLR pin work for as a master clear for programming.
+  - Brown-out Reset: Disabled, device will not reset when voltage drops under a certain threshold.
+  - Watchdog Timer: Disabled, the Windowed Watchdog Timer will not be enabled for this test, to check for timing inaccuracies while executing instructions.
+- Clock Manager (OSCCON1 and OSCFRQ registers)
+  -   Clock Frequency: 16MHz, proceeding from a 64MHz base High-Frequency Oscillator Clock
+- Pin Manager:
+  -  CAN Transmit (CANTX0) -> RB2 (output)
+  -  CAN Receive (CANRX0) -> RB3 (input)
+  -  LED pin -> RC2 (output)
 
 
 ## ECAN module configuration
