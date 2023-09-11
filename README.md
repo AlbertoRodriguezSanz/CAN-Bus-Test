@@ -20,7 +20,7 @@ The microcontrollers are connected through two MCP2561 CAN transceivers. For suc
 
 ## ECAN module configuration
 
-The following parameters are configured with the Microchip Code Configurator plugin (MCC):
+Both microcontrollers implement these module parameters through the Microchip Code Configurator plugin (MCC):
 - Clock Settings
   - Clock Source: Use system clock as CAN system clock
   - Clock Frequency: 16MHz
