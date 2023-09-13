@@ -72,6 +72,37 @@ void main(void)
     LATCbits.LC2 = 0;
     while (1)
     {
+        //Functions for debugging when the bus is not working (usually have to do with hardware issues), try one at a time or add more LEDs to other output pins
+        /*
+        if(CAN_isRXErrorPassive()){
+        //if(PIR5bits.RXB1IF){
+        //if(CAN_messagesInBuffer()>0){
+            LATCbits.LC2 = 1;
+        }
+        */
+        /*
+        if(CAN_isTXErrorPassive()){
+            LATCbits.LC2 = 1;
+        }
+        */
+        /*
+        if(CAN_isBusOff()){
+            LATCbits.LC1 = 1;
+        }
+        */
+        /*
+        if(PIR5bits.IRXIF){
+         LATCbits.LC1 = 1;
+         //LATCbits.LC1 = 0;
+        }
+        */
+        /*
+        if(PIR5bits.ERRIF){
+         //LATCbits.LC2 = 1;
+        }
+       */
+        
+        // When a message is received
         if(CAN_receive(&ReceiveMsg))
         {
            LATCbits.LC2 = 1;
