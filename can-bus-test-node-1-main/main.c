@@ -93,7 +93,6 @@ void main(void)
         /*
         if(PIR5bits.IRXIF){
          LATCbits.LC1 = 1;
-         //LATCbits.LC1 = 0;
         }
         */
         /*
