@@ -71,3 +71,12 @@ Modify the following options from the default parameters for the PICkit4 program
 Then, follow the next steps:
 * Compile: `Production> Build Main Project`
 * Program: `Production> Make and Program Device Main Project`
+
+Example of the generated CAN bus message:
+
+![cangen](https://github.com/AlbertoRodriguezSanz/CAN-Bus-Test/assets/95371514/45609c17-906a-4e81-bd94-eed32a988df3)
+
+- Channel 1 (Yellow): CAN-High (CANH)
+- Channel 2 (Green): CAN-Low (CANL)
+- Channel 3 (Purple): CAN Transmit (CANTX)
+- Channel 4 (Blue): CAN Receive (CANRX)
