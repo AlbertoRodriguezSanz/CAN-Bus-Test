@@ -1,4 +1,4 @@
-# CAN-Bus-Test
+# CAN Bus Test
 PIC firmware for performing a communication test between two PIC18F26K83 microcontrollers through the CAN bus. The goal of this test is to create a loop in which each time a microcontroller receives a message, it blinks the LED for 1s and then sends a message for the other node to receive.
 
 ## Setup
